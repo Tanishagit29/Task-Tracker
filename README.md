@@ -1,68 +1,74 @@
-<<<<<<< HEAD
-# Taskly – Task Tracker
+# Taskly: Task Tracker
 
-Frontend internship assessment (JTRONIX). A small Task Tracker built with **React + Vite**. It covers all three questions (1.1, 1.2, 1.3) in a single application. No backend or database is used.
+A simple, responsive Task Tracker built with **React** and **Vite** for the JTRONIX Frontend Internship Assessment. All three questions (1.1, 1.2 and 1.3) are built into a single application. No backend or database is needed; tasks are saved in the browser.
 
-## Run it
-
-Requires Node.js 18 or newer.
-
-```bash
-npm install
-npm run dev        # starts the dev server (usually http://localhost:5173)
-```
-
-Production build:
-
-```bash
-npm run build      # output goes to dist/
-npm run preview    # serves the built app locally
-```
 
 ## Features
 
-**1.1 Create and display tasks**
-- Text box and **Add** button (pressing Enter also works).
-- New tasks appear in a list on the page.
-- Empty or whitespace-only tasks are rejected with an inline error message.
+### 1.1 Create and display tasks
+- Text box and **Add** button (pressing Enter also works)
+- New tasks appear in a list on the page
+- Empty or whitespace-only tasks are blocked, with an inline error message
 
-**1.2 Manage tasks**
-- Checkbox on each task toggles **Completed** / **Pending** (shown with a badge and strike-through).
-- **Delete** button on each task.
-- Sidebar shows **Total**, **Completed** and **Pending** counts, plus a progress ring with the completion percentage.
+### 1.2 Manage tasks
+- Mark each task as **Completed** or **Pending** with a checkbox
+- **Delete** button on every task
+- Live counts for **Total**, **Completed** and **Pending**, plus a progress ring showing the completion percentage
 
-**1.3 Filter and save tasks**
-- **All / Pending / Completed** filter pills, each with a live count.
-- Tasks and their statuses are saved to `localStorage` (key: `taskly.tasks.v1`) and survive a page refresh. Corrupt or blocked storage is handled without crashing.
-- Responsive layout: sidebar plus content on desktop, stacked on tablets and phones (checked at 375px with no horizontal scrolling).
+### 1.3 Filter and save tasks
+- **All / Pending / Completed** filter, with a count on each option
+- Tasks and their statuses are saved in `localStorage`, so they remain after refreshing the page
+- Clear layout that works on desktop and mobile screens
 
-## Extras
-- Keyboard accessible, with visible focus styles and ARIA labels on the checkbox and delete controls.
-- Task text is rendered as plain text (no HTML injection).
-- Friendly empty-state message for each filter.
+### Extras
+- Keyboard accessible, with visible focus styles and ARIA labels
+- Task text is displayed as plain text (no HTML injection)
+- Friendly empty-state message for each filter
+- Corrupt or blocked browser storage is handled without crashing
+
+## Tech stack
+- React 18
+- Vite 5
+- Plain CSS (no UI library)
+
+## Getting started
+
+**Requirements:** Node.js 18 or newer
+
+```bash
+# 1. Install dependencies
+npm install
+
+# 2. Start the development server
+npm run dev
+```
+
+Open the address shown in the terminal (usually http://localhost:5173).
+
+### Other commands
+
+```bash
+npm run build     # create a production build in dist/
+npm run preview   # preview the production build locally
+```
 
 ## Project structure
 
 ```
-src/
-  main.jsx     entry point
-  App.jsx      all components and logic
-  styles.css   styling and responsive rules
-screenshots/   desktop, mobile, filter and validation screenshots
+task-tracker/
+├── index.html
+├── package.json
+├── vite.config.js
+├── screenshots/
+└── src/
+    ├── main.jsx      # app entry point
+    ├── App.jsx       # components and logic
+    └── styles.css    # styling and responsive rules
 ```
 
-## Screenshots
 
-See the `screenshots/` folder:
-- `01-add-tasks.png` – adding tasks
-- `02-filter-completed.png` – Completed filter active
-- `03-desktop-full.png` – desktop layout
-- `04-validation-error.png` – empty-task validation
-- `05-mobile.png` – mobile layout (375px)
+## How it works
+- Tasks are stored as `{ id, text, completed }` objects in React state.
+- A `useEffect` saves the list to `localStorage` (key `taskly.tasks.v1`) on every change, and the app loads it again on startup.
+- The visible list is derived from the current filter, and the counts are calculated from the full list.
 
-## Status
-
-All required features are implemented. Public deployment was not done (optional).
-=======
-# Task-Tracker
->>>>>>> edf21e27b2eeee3ae9b260fad5a89f85332c097c
