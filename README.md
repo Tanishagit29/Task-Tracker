@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Taskly – Task Tracker
 
 Frontend internship assessment (JTRONIX). A small Task Tracker built with **React + Vite**. It covers all three questions (1.1, 1.2, 1.3) in a single application. No backend or database is used.
@@ -62,3 +63,6 @@ See the `screenshots/` folder:
 ## Status
 
 All required features are implemented. Public deployment was not done (optional).
+=======
+# Task-Tracker
+>>>>>>> edf21e27b2eeee3ae9b260fad5a89f85332c097c
